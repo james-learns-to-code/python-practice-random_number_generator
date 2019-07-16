@@ -28,7 +28,7 @@ Then circulate random number by difference.
 
 
 # Performance Comparison
-
+```
 leedongseok-ui-MacBook-Air:Riiid test leedongseok$ kernprof -l -v test.py
 Wrote profile results to test.py.lprof
 Timer unit: 1e-06 s
@@ -58,3 +58,4 @@ Line       Hits         Time  Per Hit   % Time  Line Contents
    147         6   11844726.0 1974121.0    100.0      test_get_random_by(given_number, random_number_generator)
 
 leedongseok-ui-MacBook-Air:Riiid test leedongseok$ 
+```
