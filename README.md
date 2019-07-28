@@ -55,3 +55,20 @@ Line       Hits         Time  Per Hit   % Time  Line Contents
 
 leedongseok-ui-MacBook-Air:Riiid test leedongseok$ 
 ```
+
+# Distribution Problem
+
+For better performance of the random function, i have to care about distribution of random number.  
+
+Most well-distributed-random-number function will generate random number 'x' ranged 0...'l' for 'n' times and the result is x[0]...x[n]. following this condition.  
+sum(x[0]...x[n]) / n = l / 2  
+If i want to make more precisely, i need to sort result and get difference of each number like this.  
+sort(x[0]...x[n])   
+difference(x[n - 1]...x[n]) <= l / n  
+
+For implement better distributed random function. I have to consider about percentage.  
+The random function given has a 50% chance to generate 0 or 1. If i shifting and adding this random binary number to every digit(multiplying). chance will decrease constantly.  
+For example, if i want to generate 0...8 number using binary random function, the chance of result x is 1/8. If i using binary random function, the chance is same as 1/2*l and the 'l' is bit length. For this example. bit length 'l' is 3.  
+So if i generate 3 digit binary number, i can generate 1/8 chance of random number.  
+
+The implementation already using random-bit-shifting-generated number, so i think it almost tend to generate well-distributed random number.
